@@ -1,0 +1,30 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+
+ <!-- Define the security constraints for the application resources.
+      Specify the URL pattern for which a challenge is -->
+ 
+ <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>all</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        
+        <!-- Define the role that can access the protected resource -->       
+        <auth-constraint>
+            <role-name>User</role-name>
+            <!-- To disable authentication you can use the wildcard * 
+            	 To authenticate but allow any role, use the wildcard **. -->
+        </auth-constraint>
+    </security-constraint>
+    
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        
+        <!-- The security realm configured in the Elytron subsystem -->
+        <realm-name>exampleRealm</realm-name>
+    </login-config>
+ </web-app>
