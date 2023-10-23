@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>in.ashiot.examples</groupId>
+  <artifactId>httpclient</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>httpclient</name>
+  <description>A simple httpclient.</description>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+	<packaging>jar</packaging>
+    <properties>
+        <!-- the version for the Server -->
+        <version.server>30.0.0.Final</version.server>
+        <maven.compiler.target>11</maven.compiler.target>
+    	<maven.compiler.source>11</maven.compiler.source>
+
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>jboss-public-maven-repository</id>
+            <name>JBoss Public Maven Repository</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <layout>default</layout>
+        </repository>
+        <repository>
+            <id>redhat-ga-maven-repository</id>
+            <name>Red Hat GA Maven Repository</name>
+            <url>https://maven.repository.redhat.com/ga/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
+            </snapshots>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.wildfly.security/wildfly-elytron-client -->
+		<dependency>
+		    <groupId>org.wildfly.security</groupId>
+		    <artifactId>wildfly-elytron-client</artifactId>
+		    <version>2.0.0.Final-redhat-00001</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.wildfly.client/wildfly-client-config -->
+		<dependency>
+		    <groupId>org.wildfly.client</groupId>
+		    <artifactId>wildfly-client-config</artifactId>
+		    <version>1.0.1.Final-redhat-00001</version>
+		</dependency>
+
+  </dependencies>
+
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+	    <plugin>
+		  <groupId>org.codehaus.mojo</groupId>
+		  <artifactId>exec-maven-plugin</artifactId>
+		  <version>1.4.0</version>
+		  <configuration>
+		    <mainClass>in.ashiot.examples.App</mainClass>
+		  </configuration>
+		</plugin>
+	</plugins>
+
+  </build>
+
+</project>
