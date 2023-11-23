@@ -17,6 +17,7 @@
 	<version.bom.ee>${version.server}</version.bom.ee>
         <version.plugin.wildfly>4.2.0.Final</version.plugin.wildfly>
         <version.pack.cloud>5.0.0.Final</version.pack.cloud>
+        <version.maven.war.plugin>3.3.2</version.maven.war.plugin>
     </properties>
 
     <repositories>
@@ -97,6 +98,13 @@
             </plugins>
         </pluginManagement>
 	<finalName>${project.artifactId}</finalName>
+	<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${version.maven.war.plugin}</version>
+            </plugin>
+	</plugins>
     </build>
     <dependencies>
         <dependency>                                             
