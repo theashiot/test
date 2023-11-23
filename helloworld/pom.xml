@@ -12,14 +12,16 @@
   <name>helloworld Maven Webapp</name>
  
   <properties>
-   <version.server>30.0.0.Final</version.server>
-   <version.bom.ee>${version.server}</version.bom.ee>
-   <version.plugin.wildfly>4.2.0.Final</version.plugin.wildfly>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-	<version.pack.cloud>5.0.0.Final</version.pack.cloud>
-	<version.maven.war.plugin>3.3.2</version.maven.war.plugin>
+      <maven.compiler.source>11</maven.compiler.source>
+      <maven.compiler.target>11</maven.compiler.target>
+      <!-- the version for the Server -->
+      <version.server>30.0.0.Final</version.server>
+      <!-- The versions for BOMs, Packs and Plugins -->
+      <version.bom.ee>${version.server}</version.bom.ee>
+      <version.pack.cloud>5.0.0.Final</version.pack.cloud>
+      <version.plugin.wildfly>4.2.0.Final</version.plugin.wildfly>
   </properties>
+
 
 	<repositories>
 	    <repository>                                                                
@@ -99,7 +101,7 @@
 		</plugin>
 	      </plugins>
 	    </pluginManagement>
-	 <!--   <finalName>${project.artifactId}</finalName> -->
+	   <finalName>${project.artifactId}</finalName>
 	  </build>
 
 
@@ -147,41 +149,36 @@
 	</profile>
 
 
-
-    <profile>
-        <id>openshift</id>
-        <build>
-            <plugins>
-                <plugin>
-                     <groupId>org.wildfly.plugins</groupId>
-                     <artifactId>wildfly-maven-plugin</artifactId>
-					 <version>${version.maven.war.plugin}</version>
-                     <configuration>
-                         <feature-packs>
-                             <feature-pack>                            
-                                 <location>org.wildfly:wildfly-galleon-pack:${version.server}</location>
-                             </feature-pack>
-                             <feature-pack>
-                                 <location>org.wildfly.cloud:wildfly-cloud-galleon-pack:${version.pack.cloud}</location>
-                             </feature-pack>
-                         </feature-packs>
-                         <layers>
-                             <layer>cloud-server</layer>               
-                         </layers>
-                         <filename>ROOT.war</filename>                 
-                     </configuration>
-                     <executions>
-                         <execution>
-                             <goals>
-                                 <goal>package</goal>
-                             </goals>
-                         </execution>
-                     </executions>
-                </plugin>
-            </plugins>
-        </build>
-    </profile>
+        <profile>
+            <id>openshift</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.wildfly.plugins</groupId>
+                        <artifactId>wildfly-maven-plugin</artifactId>
+                        <configuration>
+                            <feature-packs>
+                                <feature-pack>                                  <location>org.wildfly:wildfly-galleon-pack:${version.server}</location>
+                                </feature-pack>
+                                <feature-pack>                                    <location>org.wildfly.cloud:wildfly-cloud-galleon-pack:${version.pack.cloud}</location>
+                                </feature-pack>
+                            </feature-packs>
+                            <layers>
+                                <layer>cloud-server</layer>
+                            </layers>
+                            <filename>helloworld.war</filename>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>package</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 </profiles>
-
 
 </project>
