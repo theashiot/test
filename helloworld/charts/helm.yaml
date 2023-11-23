@@ -3,4 +3,4 @@ build:
   ref: hello-app                                  
   contextDir: helloworld                              
 deploy:
-  replicas: 1  
+  replicas: 1                                         
