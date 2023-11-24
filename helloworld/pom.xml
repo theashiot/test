@@ -11,6 +11,7 @@
   <name>helloworld Maven Webapp</name>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <version.server>30.0.0.Final</version.server>
@@ -98,13 +99,6 @@
             </plugins>
         </pluginManagement>
 	<finalName>${project.artifactId}</finalName>
-	<plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>${version.maven.war.plugin}</version>
-            </plugin>
-	</plugins>
     </build>
     <dependencies>
         <dependency>                                             
@@ -163,7 +157,7 @@
                             <layers>
                                 <layer>cloud-server</layer>               
                             </layers>
-                            <filename>helloworld.war</filename>                 
+                            <name>ROOT.war</name>                 
                         </configuration>
                         <executions>
                             <execution>

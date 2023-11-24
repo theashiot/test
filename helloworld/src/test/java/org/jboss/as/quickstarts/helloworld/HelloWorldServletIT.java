@@ -20,6 +20,7 @@ public class HelloWorldServletIT {
         if (serverHost == null) {
             serverHost = DEFAULT_SERVER_HOST;
         }
+	System.out.println (serverHost);
         final HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(serverHost+"/HelloWorld"))
                 .GET()
