@@ -19,6 +19,7 @@
         <version.plugin.wildfly>4.2.0.Final</version.plugin.wildfly>
         <version.pack.cloud>5.0.0.Final</version.pack.cloud>
         <version.maven.war.plugin>3.3.2</version.maven.war.plugin>
+        <version.plugin.fail-safe>3.2.2</version.plugin.fail-safe>
     </properties>
 
     <repositories>
@@ -127,7 +128,8 @@
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-failsafe-plugin</artifactId> 
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <version>${version.plugin.fail-safe}</version>
                         <configuration>
                             <includes>
                                 <include>**/HelloWorldServletIT</include>       
