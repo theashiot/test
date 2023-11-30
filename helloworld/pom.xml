@@ -157,7 +157,8 @@
                     <plugins>
                     <plugin>
                         <groupId>org.wildfly.plugins</groupId>
-                        <artifactId>wildfly-maven-plugin</artifactId>     
+                        <artifactId>wildfly-maven-plugin</artifactId>
+                        <version>${version.wildfly.maven.plugin}</version>     
                         <configuration>
                             <feature-packs>
                                 <feature-pack>                            
