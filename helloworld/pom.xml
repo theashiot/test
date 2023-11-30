@@ -20,6 +20,7 @@
         <version.plugin.wildfly>4.2.0.Final</version.plugin.wildfly>
         <version.bom.ee>${version.server}</version.bom.ee>
         <version.plugin.failsafe>3.2.2</version.plugin.failsafe>
+        <version.pack.cloud>5.0.0.Final</version.pack.cloud>
     </properties>
 
     <repositories>
