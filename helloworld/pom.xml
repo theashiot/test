@@ -14,6 +14,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <version.maven.war.plugin>3.3.2</version.maven.war.plugin>
         <version.server>30.0.0.Final</version.server>
         <version.bom.ee>${version.server}</version.bom.ee>
         <version.plugin.wildfly>4.2.0.Final</version.plugin.wildfly>
