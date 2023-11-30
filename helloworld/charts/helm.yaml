@@ -1,0 +1,6 @@
+build:
+  uri: https://github.com/theashiot/test.git     
+  ref: hello-app                                  
+  contextDir: helloworld                              
+deploy:
+  replicas: 1                                         
